@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Anand Deo | IIM Bangalore</title>
+    <title>Anand Deo | IIM Bangalore</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -19,10 +20,10 @@
                             400: '#94a3b8',
                             500: '#64748b',
                             600: '#475569',
-                            700: '#334155', // Primary Slate
+                            700: '#334155',
                             800: '#1e293b',
                             900: '#0f172a',
-                            blue: '#2563eb', // Accent Blue
+                            blue: '#2563eb',
                             darkblue: '#1d4ed8'
                         }
                     },
@@ -43,16 +44,20 @@
             }
         }
     </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         .active-nav-link {
             color: #2563eb !important;
             font-weight: 600;
         }
+
         .dark .active-nav-link {
             color: #60a5fa !important;
         }
+
         .active-nav-link::after {
             content: '';
             position: absolute;
@@ -62,42 +67,57 @@
             height: 2px;
             background-color: currentColor;
         }
+
         .nav-link {
             position: relative;
         }
-        /* Custom scrollbar for a cleaner look */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        .dark ::-webkit-scrollbar-thumb { background: #475569; }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: #475569;
+        }
     </style>
 </head>
+
 <body class="bg-academic-50 text-academic-800 dark:bg-academic-900 dark:text-academic-100 font-sans transition-colors duration-300 min-h-screen flex flex-col">
 
 <header class="sticky top-0 z-50 bg-white/95 dark:bg-academic-900/95 backdrop-blur-sm border-b border-academic-200 dark:border-academic-800">
-    <nav class="max-w-5xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
         <div class="flex items-center space-x-4">
             <div class="leading-tight">
-                <a href="#" onclick="navigate('about'); return false;" class="text-2xl font-serif font-bold text-academic-900 dark:text-white tracking-tight hover:text-academic-blue transition-colors">Anand Deo</a>
+                <a href="#" onclick="navigate('about'); return false;" class="text-2xl font-serif font-bold text-academic-900 dark:text-white tracking-tight hover:text-academic-blue transition-colors">
+                    Anand Deo
+                </a>
                 <p class="text-xs text-academic-500 dark:text-academic-400 font-medium">IIM Bangalore</p>
             </div>
         </div>
-        
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center space-x-8 text-sm text-academic-600 dark:text-academic-300">
+
+        <div class="hidden md:flex items-center space-x-7 text-sm text-academic-600 dark:text-academic-300">
             <a href="#" onclick="navigate('about'); return false;" class="nav-link py-2 hover:text-academic-900 dark:hover:text-white transition-colors active-nav-link" data-target="about">Home & About</a>
             <a href="#" onclick="navigate('research'); return false;" class="nav-link py-2 hover:text-academic-900 dark:hover:text-white transition-colors" data-target="research">Research</a>
+            <a href="#" onclick="navigate('talks'); return false;" class="nav-link py-2 hover:text-academic-900 dark:hover:text-white transition-colors" data-target="talks">Selected Talks</a>
             <a href="#" onclick="navigate('teaching'); return false;" class="nav-link py-2 hover:text-academic-900 dark:hover:text-white transition-colors" data-target="teaching">Teaching</a>
             <a href="#" onclick="navigate('students'); return false;" class="nav-link py-2 hover:text-academic-900 dark:hover:text-white transition-colors" data-target="students">Students</a>
-            
+
             <div class="h-5 w-px bg-academic-300 dark:bg-academic-700"></div>
-            
+
             <button id="themeToggle" class="text-academic-500 hover:text-academic-900 dark:hover:text-white transition-colors" aria-label="Toggle dark mode">
                 <i id="themeIcon" class="fas fa-moon text-lg"></i>
             </button>
         </div>
 
-        <!-- Mobile Menu Toggle -->
         <div class="flex items-center space-x-4 md:hidden">
             <button id="themeToggleMobile" class="text-academic-500 hover:text-academic-900 dark:hover:text-white transition-colors">
                 <i id="themeIconMobile" class="fas fa-moon text-lg"></i>
@@ -109,80 +129,79 @@
     </nav>
 </header>
 
-<!-- Mobile Navigation Menu -->
 <div id="mobileMenu" class="hidden md:hidden fixed inset-x-0 top-20 bg-white dark:bg-academic-900 border-b border-academic-200 dark:border-academic-800 z-40 shadow-lg">
     <div class="px-4 py-4 space-y-2 text-sm font-medium">
         <a href="#" onclick="navigate('about'); return false;" class="mobile-nav-link block px-3 py-2 rounded-md hover:bg-academic-100 dark:hover:bg-academic-800" data-target="about">Home & About</a>
         <a href="#" onclick="navigate('research'); return false;" class="mobile-nav-link block px-3 py-2 rounded-md hover:bg-academic-100 dark:hover:bg-academic-800" data-target="research">Research</a>
+        <a href="#" onclick="navigate('talks'); return false;" class="mobile-nav-link block px-3 py-2 rounded-md hover:bg-academic-100 dark:hover:bg-academic-800" data-target="talks">Selected Talks</a>
         <a href="#" onclick="navigate('teaching'); return false;" class="mobile-nav-link block px-3 py-2 rounded-md hover:bg-academic-100 dark:hover:bg-academic-800" data-target="teaching">Teaching</a>
         <a href="#" onclick="navigate('students'); return false;" class="mobile-nav-link block px-3 py-2 rounded-md hover:bg-academic-100 dark:hover:bg-academic-800" data-target="students">Students</a>
     </div>
 </div>
 
-<main class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 w-full py-12">
-    
+<main class="flex-grow max-w-6xl mx-auto px-4 sm:px-6 w-full py-12">
+
     <!-- ========================================== -->
     <!-- ABOUT PAGE -->
     <!-- ========================================== -->
     <section id="page-about" class="page-section animate-fade-in block">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
-            <!-- Left Column: Intro & Bio -->
             <div class="md:col-span-8 space-y-8">
-                <div>
-                    <div class="prose prose-slate dark:prose-invert max-w-none text-academic-700 dark:text-academic-300 leading-relaxed font-light">
-                        <p class="mb-4">
-                          I am an Assistant Professor (with tenure) in the Decision Sciences Area at the Indian Institute of Management Bangalore. I completed my B.E. in Electronics Engineering at Mumbai University in 2015, followed by an M.Sc. and Ph.D. in Quantitative Risk Management at the Tata Institute of Fundamental Research, Mumbai, in 2021, under the supervision of Sandeep Juneja. Before joining IIM Bangalore, I was a Postdoctoral Researcher at the Singapore University of Technology and Design. My research develops methods for analysing rare, high-impact events in Operations Research and Quantitative Finance. 
-                        </p>
-                    </div>
+                <div class="prose prose-slate dark:prose-invert max-w-none text-academic-700 dark:text-academic-300 leading-relaxed font-light">
+                    <p class="mb-4">
+                        I am an Assistant Professor (with tenure) in the Decision Sciences Area at the Indian Institute of Management Bangalore. I completed my B.E. in Electronics Engineering at Mumbai University in 2015, followed by an M.Sc. and Ph.D. in Quantitative Risk Management at the Tata Institute of Fundamental Research, Mumbai, in 2021, under the supervision of Sandeep Juneja. Before joining IIM Bangalore, I was a Postdoctoral Researcher at the Singapore University of Technology and Design. My research develops methods for analysing rare, high-impact events in Operations Research and Quantitative Finance.
+                    </p>
                 </div>
 
-                <!-- Polished Academic Research Interests -->
                 <div class="pt-6">
-                    <h2 class="text-xl font-serif font-semibold text-academic-900 dark:text-white border-b border-academic-200 dark:border-academic-700 pb-3 mb-6">Core Research Themes</h2>
+                    <h2 class="text-xl font-serif font-semibold text-academic-900 dark:text-white border-b border-academic-200 dark:border-academic-700 pb-3 mb-6">
+                        Core Research Themes
+                    </h2>
+
                     <ul class="space-y-5 text-academic-700 dark:text-academic-300 text-sm">
                         <li class="flex items-start">
                             <i class="fas fa-play text-[8px] text-academic-blue mt-1.5 mr-4 opacity-70"></i>
-                            <div>
-                                <strong class="text-academic-900 dark:text-academic-100 block mb-1">Quantitative Risk Management</strong>
-                            </div>
+                            <strong class="text-academic-900 dark:text-academic-100 block mb-1">Quantitative Risk Management</strong>
                         </li>
+
                         <li class="flex items-start">
                             <i class="fas fa-play text-[8px] text-academic-blue mt-1.5 mr-4 opacity-70"></i>
-                            <div>
-                                <strong class="text-academic-900 dark:text-academic-100 block mb-1">Extreme Value Theory and Rare Event Simulation</strong>
-                            </div>
+                            <strong class="text-academic-900 dark:text-academic-100 block mb-1">Extreme Value Theory and Rare Event Simulation</strong>
                         </li>
+
                         <li class="flex items-start">
                             <i class="fas fa-play text-[8px] text-academic-blue mt-1.5 mr-4 opacity-70"></i>
-                            <div>
-                                <strong class="text-academic-900 dark:text-academic-100 block mb-1">Distributionally Robust Optimization and Chance Constraints</strong>
-                            </div>
+                            <strong class="text-academic-900 dark:text-academic-100 block mb-1">Distributionally Robust Optimization and Chance Constraints</strong>
                         </li>
+
                         <li class="flex items-start">
                             <i class="fas fa-play text-[8px] text-academic-blue mt-1.5 mr-4 opacity-70"></i>
-                            <div>
-                                <strong class="text-academic-900 dark:text-academic-100 block mb-1">Financial Networks</strong>
-                            </div>
+                            <strong class="text-academic-900 dark:text-academic-100 block mb-1">Financial Networks</strong>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Selective Awards (Academic Presentation) -->
                 <div class="pt-6">
-                    <h2 class="text-xl font-serif font-semibold text-academic-900 dark:text-white border-b border-academic-200 dark:border-academic-700 pb-3 mb-6">Selected Honors</h2>
+                    <h2 class="text-xl font-serif font-semibold text-academic-900 dark:text-white border-b border-academic-200 dark:border-academic-700 pb-3 mb-6">
+                        Selected Honors
+                    </h2>
+
                     <div class="space-y-4 text-sm font-light text-academic-700 dark:text-academic-300">
                         <div class="flex items-start">
                             <span class="text-academic-500 font-medium w-16 flex-shrink-0">2024</span>
                             <span><strong>I-SIM Best Publication Award</strong> for "Achieving Efficiency in Black-Box Simulation of Distribution Tails"</span>
                         </div>
+
                         <div class="flex items-start">
                             <span class="text-academic-500 font-medium w-16 flex-shrink-0">2023</span>
-                            <span><strong>Excellence in Teaching</strong> (Applied Probability and Statistical Models), IIM-Bangalore</span>
+                            <span><strong>Excellence in Teaching</strong> (Applied Probability and Statistical Models), IIM Bangalore</span>
                         </div>
+
                         <div class="flex items-start">
                             <span class="text-academic-500 font-medium w-16 flex-shrink-0">2021</span>
                             <span><strong>Third Prize at INFORMS JFIG</strong> for "Achieving Efficiency in Black-Box Simulation of Distribution Tails"</span>
                         </div>
+
                         <div class="flex items-start">
                             <span class="text-academic-500 font-medium w-16 flex-shrink-0">2017</span>
                             <span><strong>Best Paper Award</strong> at CRISIL Doctoral Symposium</span>
@@ -191,14 +210,14 @@
                 </div>
             </div>
 
-            <!-- Right Column: Contact & Quick Links -->
-            <div class="md:col-span-4">
+            <div class="md:col-span-4 md:translate-x-8">
                 <div class="sticky top-28 bg-white dark:bg-academic-800 p-6 rounded-lg border border-academic-200 dark:border-academic-700 shadow-sm">
-                    <!-- Profile Headshot -->
-                    <img src="Anand_Webpage.jpeg" alt="Dr. Anand Deo" class="w-full aspect-square object-cover rounded mb-6 border border-academic-200 dark:border-academic-600 shadow-sm">
-                    
-                    <h3 class="text-sm font-bold text-academic-900 dark:text-white uppercase tracking-wider mb-4 border-b border-academic-100 dark:border-academic-700 pb-2">Contact</h3>
-                    
+                    <img src="Anand_Webpage.jpeg" alt="Anand Deo" class="w-full max-w-[360px] mx-auto aspect-square object-cover rounded mb-6 border border-academic-200 dark:border-academic-600 shadow-sm">
+
+                    <h3 class="text-sm font-bold text-academic-900 dark:text-white uppercase tracking-wider mb-4 border-b border-academic-100 dark:border-academic-700 pb-2">
+                        Contact
+                    </h3>
+
                     <ul class="space-y-3 text-sm text-academic-600 dark:text-academic-300">
                         <li>
                             <a href="mailto:anand.deo@iimb.ac.in" class="flex items-center hover:text-academic-blue transition-colors group">
@@ -206,811 +225,1077 @@
                                 anand.deo@iimb.ac.in
                             </a>
                         </li>
-                           
-    <li>
-        <a href="https://scholar.google.com/citations?hl=en&user=9SkR__AAAAAJ" target="_blank" class="flex items-center hover:text-academic-blue transition-colors group">
-            <i class="fas fa-graduation-cap w-6 text-academic-400 group-hover:text-academic-blue"></i>
-            Google Scholar
-        </a>
-    </li>
 
-    <li>
-        <a href="https://www.linkedin.com/in/anand-deo-operationsresearch/" target="_blank" class="flex items-center hover:text-academic-blue transition-colors group">
-            <i class="fab fa-linkedin w-6 text-academic-400 group-hover:text-academic-blue"></i>
-            LinkedIn Profile
-        </a>
-    </li>
+                        <li>
+                            <a href="https://scholar.google.com/citations?hl=en&user=9SkR__AAAAAJ" target="_blank" class="flex items-center hover:text-academic-blue transition-colors group">
+                                <i class="fas fa-graduation-cap w-6 text-academic-400 group-hover:text-academic-blue"></i>
+                                Google Scholar
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.linkedin.com/in/anand-deo-operationsresearch/" target="_blank" class="flex items-center hover:text-academic-blue transition-colors group">
+                                <i class="fab fa-linkedin w-6 text-academic-400 group-hover:text-academic-blue"></i>
+                                LinkedIn Profile
+                            </a>
+                        </li>
                     </ul>
 
                     <div class="mt-8 pt-6 border-t border-academic-100 dark:border-academic-700">
-    <a href="Professional_CV_Jun26.pdf" target="_blank" class="block w-full text-center bg-academic-800 hover:bg-academic-900 dark:bg-academic-700 dark:hover:bg-academic-600 text-white font-medium py-2.5 px-4 rounded transition-colors text-sm">
-        <i class="fas fa-file-pdf mr-2"></i> View Full CV
-    </a>
-</div>
+                        <a href="Professional_CV_Jun26.pdf" target="_blank" class="block w-full text-center bg-academic-800 hover:bg-academic-900 dark:bg-academic-700 dark:hover:bg-academic-600 text-white font-medium py-2.5 px-4 rounded transition-colors text-sm">
+                            <i class="fas fa-file-pdf mr-2"></i> View Full CV
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ========================================== -->
-<!-- ========================================== -->
-<!-- RESEARCH PAGE -->
-<!-- ========================================== -->
-<section id="page-research" class="page-section hidden animate-fade-in">
-    <h1 class="text-3xl font-serif font-bold text-academic-900 dark:text-white mb-8 border-b border-academic-200 dark:border-academic-700 pb-4">
-        Publications & Research
-    </h1>
-    
-    <!-- Filter Buttons -->
-    <div class="flex flex-wrap gap-2 mb-10 border-b border-academic-200 dark:border-academic-700 pb-6">
-        <button onclick="filterPubs('all')" class="pub-btn active-pub-btn px-4 py-1.5 text-sm font-medium border border-academic-300 dark:border-academic-600 rounded hover:bg-academic-100 dark:hover:bg-academic-800 transition-colors" data-filter="all">All</button>
-        <button onclick="filterPubs('journal')" class="pub-btn px-4 py-1.5 text-sm font-medium border border-academic-300 dark:border-academic-600 rounded hover:bg-academic-100 dark:hover:bg-academic-800 transition-colors" data-filter="journal">Journals & Preprints</button>
-        <button onclick="filterPubs('conference')" class="pub-btn px-4 py-1.5 text-sm font-medium border border-academic-300 dark:border-academic-600 rounded hover:bg-academic-100 dark:hover:bg-academic-800 transition-colors" data-filter="conference">Conference Proceedings</button>
-        <button onclick="filterPubs('working')" class="pub-btn px-4 py-1.5 text-sm font-medium border border-academic-300 dark:border-academic-600 rounded hover:bg-academic-100 dark:hover:bg-academic-800 transition-colors" data-filter="working">Working Papers</button>
-    </div>
+    <!-- RESEARCH PAGE -->
+    <!-- ========================================== -->
+    <section id="page-research" class="page-section hidden animate-fade-in">
+        <h1 class="text-3xl font-serif font-bold text-academic-900 dark:text-white mb-8 border-b border-academic-200 dark:border-academic-700 pb-4">
+            Publications & Research
+        </h1>
 
-    <div class="space-y-12">
-
-        <!-- Journal Publications -->
-        <div class="pub-section" data-category="journal">
-            <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
-                Journal Publications & Preprints
-            </h2>
-
-            <div class="space-y-8 pl-4 border-l-2 border-academic-200 dark:border-academic-700">
-                
-                <div class="relative">
-                    <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
-                        <a href="https://arxiv.org/abs/2603.17344" target="_blank" class="hover:text-academic-blue transition-colors">
-                            Decision Scaled Approach to Scenario Approximation
-                            <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
-                        </a>
-                    </h3>
-                    <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
-                        with Jaeseok Choi, Constantino M. Lagoa, Anirudh Subramanyam
-                    </p>
-                    <p class="text-sm text-academic-800 dark:text-academic-300 mt-2 font-serif italic">
-                        Preprint under review at Mathematical Programming
-                    </p>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
-                        <a href="https://arxiv.org/abs/2506.16230" target="_blank" class="hover:text-academic-blue transition-colors">
-                            On Design of Representative Distributionally Robust Formulations for Evaluation of Tail Risk Measures
-                            <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
-                        </a>
-                    </h3>
-                    <p class="text-sm text-academic-800 dark:text-academic-300 mt-2 font-serif italic">
-                        Preprint under review at Extremes
-                    </p>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
-                        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4926070" target="_blank" class="hover:text-academic-blue transition-colors">
-                            The Scaling Behaviors in Achieving High Reliability via Chance-Constrained Optimization
-                            <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
-                        </a>
-                    </h3>
-                    <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
-                        with Karthyek Murthy
-                    </p>
-                    <p class="text-sm text-academic-800 dark:text-academic-300 mt-2 font-serif italic">
-                        Preprint to be submitted to Management Science
-                    </p>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-blue rounded-full border-2 border-white dark:border-academic-900"></div>
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
-                        <a href="https://arxiv.org/abs/2102.07060" target="_blank" class="hover:text-academic-blue transition-colors">
-                            Achieving Efficiency in Black-box Simulation of Distribution Tails with Self-structuring Importance Samplers
-                            <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
-                        </a>
-                    </h3>
-                    <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
-                        with Karthyek Murthy
-                    </p>
-                    <p class="text-sm text-academic-800 dark:text-academic-300 mt-2 font-bold">
-                        <span class="font-serif italic">Operations Research</span>, 2025
-                        <a href="https://pubsonline.informs.org/doi/abs/10.1287/opre.2021.0331" target="_blank" class="ml-2 font-normal text-academic-blue hover:text-academic-darkblue dark:text-blue-400 dark:hover:text-blue-300">
-                            journal version
-                            <i class="fas fa-external-link-alt text-xs ml-1"></i>
-                        </a>
-                    </p>
-                    <p class="text-sm font-semibold text-amber-700 dark:text-amber-500 mt-1.5 flex items-center">
-                        <i class="fas fa-award mr-1.5"></i> I-SIM Best Publication Award (2024)
-                    </p>
-                    <p class="text-sm font-semibold text-amber-700 dark:text-amber-500 mt-1 flex items-center">
-                        <i class="fas fa-award mr-1.5"></i> Third Prize at INFORMS JFIG (2021)
-                    </p>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
-                        <a href="https://ieeexplore.ieee.org/document/10793422?source=authoralert" target="_blank" class="hover:text-academic-blue transition-colors">
-                            Reduced Sample Complexity in Scenario-Based Control System Design via Constraint Scaling
-                            <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
-                        </a>
-                    </h3>
-                    <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
-                        with Jaeseok Choi, Constantino M. Lagoa, Anirudh Subramanyam
-                    </p>
-                    <p class="text-sm text-academic-800 dark:text-academic-300 mt-2 font-bold">
-                        <span class="font-serif italic">IEEE Control Systems Letters</span>, 2024 (American Control Conference 2025)
-                    </p>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-blue rounded-full border-2 border-white dark:border-academic-900"></div>
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
-                        <a href="https://pubsonline.informs.org/doi/10.1287/opre.2020.2029" target="_blank" class="hover:text-academic-blue transition-colors">
-                            Credit Risk: Simple Closed Form Approximate Maximum Likelihood Estimator
-                            <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
-                        </a>
-                    </h3>
-                    <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
-                        with Sandeep Juneja
-                    </p>
-                    <p class="text-sm text-academic-800 dark:text-academic-300 mt-2 font-bold">
-                        <span class="font-serif italic">Operations Research</span>, 2021
-                    </p>
-                    <p class="text-sm font-semibold text-amber-700 dark:text-amber-500 mt-1.5 flex items-center">
-                        <i class="fas fa-award mr-1.5"></i> Best Paper Award at the CRISIL Doctoral Symposium (2017)
-                    </p>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
-                        <a href="https://arxiv.org/abs/2008.04849" target="_blank" class="hover:text-academic-blue transition-colors">
-                            City-Scale Agent-Based Simulators for the Study of Non-Pharmaceutical Interventions in the Context of the COVID-19 Epidemic
-                            <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
-                        </a>
-                    </h3>
-                    <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
-                        with TIFR and IISc COVID Simulation Teams
-                    </p>
-                    <p class="text-sm text-academic-800 dark:text-academic-300 mt-2">
-                        <span class="font-serif italic">Journal of the Indian Institute of Science</span>, 2020
-                    </p>
-                </div>
-
-            </div>
+        <div class="flex flex-wrap gap-2 mb-10 border-b border-academic-200 dark:border-academic-700 pb-6">
+            <button onclick="filterPubs('all')" class="pub-btn px-4 py-1.5 text-sm font-medium border border-academic-300 dark:border-academic-600 rounded hover:bg-academic-100 dark:hover:bg-academic-800 transition-colors" data-filter="all">All</button>
+            <button onclick="filterPubs('journal')" class="pub-btn px-4 py-1.5 text-sm font-medium border border-academic-300 dark:border-academic-600 rounded hover:bg-academic-100 dark:hover:bg-academic-800 transition-colors" data-filter="journal">Journals & Preprints</button>
+            <button onclick="filterPubs('conference')" class="pub-btn px-4 py-1.5 text-sm font-medium border border-academic-300 dark:border-academic-600 rounded hover:bg-academic-100 dark:hover:bg-academic-800 transition-colors" data-filter="conference">Conference Proceedings</button>
+            <button onclick="filterPubs('working')" class="pub-btn px-4 py-1.5 text-sm font-medium border border-academic-300 dark:border-academic-600 rounded hover:bg-academic-100 dark:hover:bg-academic-800 transition-colors" data-filter="working">Working Papers</button>
         </div>
 
-        <!-- Conference Publications -->
-        <div class="pub-section" data-category="conference">
-            <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
-                Publications at Conferences with Proceedings
-            </h2>
+        <div class="space-y-12">
 
-            <div class="space-y-8 pl-4 border-l-2 border-academic-200 dark:border-academic-700">
-                
-                <div class="relative">
-                    <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
-                        A large deviations perspective to stress testing
-                    </h3>
-                    <p class="text-sm text-academic-800 dark:text-academic-300 mt-2">
-                        <span class="font-serif italic">Winter Simulation Conference</span>, 2026 (Accepted)
-                    </p>
+            <div class="pub-section" data-category="journal">
+                <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
+                    Journal Publications & Preprints
+                </h2>
+
+                <div class="space-y-8 pl-4 border-l-2 border-academic-200 dark:border-academic-700">
+
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
+                            <a href="https://arxiv.org/abs/2603.17344" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Decision Scaled Approach to Scenario Approximation
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
+                            with Jaeseok Choi, Constantino M. Lagoa, Anirudh Subramanyam
+                        </p>
+                        <p class="text-sm text-academic-800 dark:text-academic-300 mt-2 font-serif italic">
+                            Preprint under review at Mathematical Programming
+                        </p>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
+                            <a href="https://arxiv.org/abs/2506.16230" target="_blank" class="hover:text-academic-blue transition-colors">
+                                On Design of Representative Distributionally Robust Formulations for Evaluation of Tail Risk Measures
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="text-sm text-academic-800 dark:text-academic-300 mt-2 font-serif italic">
+                            Preprint under review at Extremes
+                        </p>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
+                            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4926070" target="_blank" class="hover:text-academic-blue transition-colors">
+                                The Scaling Behaviors in Achieving High Reliability via Chance-Constrained Optimization
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
+                            with Karthyek Murthy
+                        </p>
+                        <p class="text-sm text-academic-800 dark:text-academic-300 mt-2 font-serif italic">
+                            Preprint to be submitted to Management Science
+                        </p>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-blue rounded-full border-2 border-white dark:border-academic-900"></div>
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
+                            <a href="https://arxiv.org/abs/2102.07060" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Achieving Efficiency in Black-box Simulation of Distribution Tails with Self-structuring Importance Samplers
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
+                            with Karthyek Murthy
+                        </p>
+                        <p class="text-sm text-academic-800 dark:text-academic-300 mt-2 font-bold">
+                            <span class="font-serif italic">Operations Research</span>, 2025
+                            <a href="https://pubsonline.informs.org/doi/abs/10.1287/opre.2021.0331" target="_blank" class="ml-2 font-normal text-academic-blue hover:text-academic-darkblue dark:text-blue-400 dark:hover:text-blue-300">
+                                journal version
+                                <i class="fas fa-external-link-alt text-xs ml-1"></i>
+                            </a>
+                        </p>
+                        <p class="text-sm font-semibold text-amber-700 dark:text-amber-500 mt-1.5 flex items-center">
+                            <i class="fas fa-award mr-1.5"></i> I-SIM Best Publication Award (2024)
+                        </p>
+                        <p class="text-sm font-semibold text-amber-700 dark:text-amber-500 mt-1 flex items-center">
+                            <i class="fas fa-award mr-1.5"></i> Third Prize at INFORMS JFIG (2021)
+                        </p>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
+                            <a href="https://ieeexplore.ieee.org/document/10793422?source=authoralert" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Reduced Sample Complexity in Scenario-Based Control System Design via Constraint Scaling
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
+                            with Jaeseok Choi, Constantino M. Lagoa, Anirudh Subramanyam
+                        </p>
+                        <p class="text-sm text-academic-800 dark:text-academic-300 mt-2 font-bold">
+                            <span class="font-serif italic">IEEE Control Systems Letters</span>, 2024 (American Control Conference 2025)
+                        </p>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-blue rounded-full border-2 border-white dark:border-academic-900"></div>
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
+                            <a href="https://pubsonline.informs.org/doi/10.1287/opre.2020.2029" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Credit Risk: Simple Closed Form Approximate Maximum Likelihood Estimator
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
+                            with Sandeep Juneja
+                        </p>
+                        <p class="text-sm text-academic-800 dark:text-academic-300 mt-2 font-bold">
+                            <span class="font-serif italic">Operations Research</span>, 2021
+                        </p>
+                        <p class="text-sm font-semibold text-amber-700 dark:text-amber-500 mt-1.5 flex items-center">
+                            <i class="fas fa-award mr-1.5"></i> Best Paper Award at the CRISIL Doctoral Symposium (2017)
+                        </p>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
+                            <a href="https://arxiv.org/abs/2008.04849" target="_blank" class="hover:text-academic-blue transition-colors">
+                                City-Scale Agent-Based Simulators for the Study of Non-Pharmaceutical Interventions in the Context of the COVID-19 Epidemic
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
+                            with TIFR and IISc COVID Simulation Teams
+                        </p>
+                        <p class="text-sm text-academic-800 dark:text-academic-300 mt-2">
+                            <span class="font-serif italic">Journal of the Indian Institute of Science</span>, 2020
+                        </p>
+                    </div>
+
                 </div>
-
-                <div class="relative">
-                    <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
-                        Sampling distribution tails using Generative Models
-                    </h3>
-                    <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
-                        with Mantu Gupta
-                    </p>
-                    <p class="text-sm text-academic-800 dark:text-academic-300 mt-2">
-                        <span class="font-serif italic">Winter Simulation Conference</span>, 2026 (Accepted)
-                    </p>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
-                        <a href="https://drive.google.com/file/d/1Jxzhz_04LeYYEYBdwC-jsbMucsvTmab1/view?usp=drive_link" target="_blank" class="hover:text-academic-blue transition-colors">
-                            Importance Sampling for Optimisation with Rare Events: A Tutorial
-                            <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
-                        </a>
-                    </h3>
-                    <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
-                        with Karthyek Murthy (Invited Tutorial)
-                    </p>
-                    <p class="text-sm text-academic-800 dark:text-academic-300 mt-2">
-                        <span class="font-serif italic">Winter Simulation Conference</span>, 2024
-                    </p>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
-                        <a href="https://iora.nus.edu.sg/wp-content/uploads/2022/09/Overcoming-The-Sample-Complexity-Barrier-in-Risk-Analytics-with-Debiased-Learning.pdf" target="_blank" class="hover:text-academic-blue transition-colors">
-                            Overcoming the Sample Complexity Barrier in Risk Analytics with De-biased Learning
-                            <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
-                        </a>
-                    </h3>
-                    <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
-                        with Karthyek Murthy and Arjun Ramachandra
-                    </p>
-                    <p class="text-sm text-academic-800 dark:text-academic-300 mt-2">
-                        <span class="font-serif italic">Analytics for X</span>, 2022
-                    </p>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
-                        <a href="https://arxiv.org/pdf/2206.12835.pdf" target="_blank" class="hover:text-academic-blue transition-colors">
-                            Combining Retrospective Approximation with Importance Sampling for Optimising Conditional Value at Risk
-                            <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
-                        </a>
-                    </h3>
-                    <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
-                        with Karthyek Murthy and Tirtho Sarker (Invited Paper)
-                    </p>
-                    <p class="text-sm text-academic-800 dark:text-academic-300 mt-2">
-                        <span class="font-serif italic">Winter Simulation Conference</span>, 2022
-                    </p>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
-                        <a href="https://drive.google.com/file/d/1yv9kOjFILb3G2UoHhhv_V3WlFlQzssdl/view?usp=sharing" target="_blank" class="hover:text-academic-blue transition-colors">
-                            Efficient Black Box Importance Sampling for VaR and CVaR estimation
-                            <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
-                        </a>
-                    </h3>
-                    <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
-                        with Karthyek Murthy
-                    </p>
-                    <p class="text-sm text-academic-800 dark:text-academic-300 mt-2">
-                        <span class="font-serif italic">Winter Simulation Conference</span>, 2021
-                    </p>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
-                        <a href="https://drive.google.com/file/d/1HjU8_JI0Ei5CDT2xpCSRK1GD0UTSHlDJ/view?usp=sharing" target="_blank" class="hover:text-academic-blue transition-colors">
-                            Optimizing tail risks using an importance sampling based extrapolation for heavy-tailed objectives
-                            <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
-                        </a>
-                    </h3>
-                    <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
-                        with Karthyek Murthy
-                    </p>
-                    <p class="text-sm text-academic-800 dark:text-academic-300 mt-2">
-                        <span class="font-serif italic">Control and Decision Conference</span>, 2020
-                    </p>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
-                        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3415528" target="_blank" class="hover:text-academic-blue transition-colors">
-                            Limiting distributional fixed points in systemic risk graph models
-                            <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
-                        </a>
-                    </h3>
-                    <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
-                        with Sandeep Juneja (Invited Paper)
-                    </p>
-                    <p class="text-sm text-academic-800 dark:text-academic-300 mt-2">
-                        <span class="font-serif italic">Winter Simulation Conference</span>, 2019
-                    </p>
-                </div>
-
             </div>
-        </div>
 
-        <!-- Working Papers -->
-        <div class="pub-section" data-category="working">
-            <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
-                Working Papers
-            </h2>
+            <div class="pub-section" data-category="conference">
+                <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
+                    Publications at Conferences with Proceedings
+                </h2>
 
-            <div class="space-y-6 pl-4 border-l-2 border-academic-200 dark:border-academic-700">
+                <div class="space-y-8 pl-4 border-l-2 border-academic-200 dark:border-academic-700">
 
-                <div class="relative">
-                    <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-transparent border-2 border-academic-400 dark:border-academic-500 rounded-full"></div>
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
-                        Learning Stress Laws Conditioned on Rare Joint Losses
-                    </h3>
-                    <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
-                        with Mantu Gupta (Draft available upon request)
-                    </p>
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
+                            A large deviations perspective to stress testing
+                        </h3>
+                        <p class="text-sm text-academic-800 dark:text-academic-300 mt-2">
+                            <span class="font-serif italic">Winter Simulation Conference</span>, 2026 (Accepted)
+                        </p>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
+                            Sampling distribution tails using Generative Models
+                        </h3>
+                        <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
+                            with Mantu Gupta
+                        </p>
+                        <p class="text-sm text-academic-800 dark:text-academic-300 mt-2">
+                            <span class="font-serif italic">Winter Simulation Conference</span>, 2026 (Accepted)
+                        </p>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
+                            <a href="https://drive.google.com/file/d/1Jxzhz_04LeYYEYBdwC-jsbMucsvTmab1/view?usp=drive_link" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Importance Sampling for Optimisation with Rare Events: A Tutorial
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
+                            with Karthyek Murthy (Invited Tutorial)
+                        </p>
+                        <p class="text-sm text-academic-800 dark:text-academic-300 mt-2">
+                            <span class="font-serif italic">Winter Simulation Conference</span>, 2024
+                        </p>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
+                            <a href="https://iora.nus.edu.sg/wp-content/uploads/2022/09/Overcoming-The-Sample-Complexity-Barrier-in-Risk-Analytics-with-Debiased-Learning.pdf" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Overcoming the Sample Complexity Barrier in Risk Analytics with De-biased Learning
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
+                            with Karthyek Murthy and Arjun Ramachandra
+                        </p>
+                        <p class="text-sm text-academic-800 dark:text-academic-300 mt-2">
+                            <span class="font-serif italic">Analytics for X</span>, 2022
+                        </p>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
+                            <a href="https://arxiv.org/pdf/2206.12835.pdf" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Combining Retrospective Approximation with Importance Sampling for Optimising Conditional Value at Risk
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
+                            with Karthyek Murthy and Tirtho Sarker (Invited Paper)
+                        </p>
+                        <p class="text-sm text-academic-800 dark:text-academic-300 mt-2">
+                            <span class="font-serif italic">Winter Simulation Conference</span>, 2022
+                        </p>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
+                            <a href="https://drive.google.com/file/d/1yv9kOjFILb3G2UoHhhv_V3WlFlQzssdl/view?usp=sharing" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Efficient Black Box Importance Sampling for VaR and CVaR estimation
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
+                            with Karthyek Murthy
+                        </p>
+                        <p class="text-sm text-academic-800 dark:text-academic-300 mt-2">
+                            <span class="font-serif italic">Winter Simulation Conference</span>, 2021
+                        </p>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
+                            <a href="https://drive.google.com/file/d/1HjU8_JI0Ei5CDT2xpCSRK1GD0UTSHlDJ/view?usp=sharing" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Optimizing tail risks using an importance sampling based extrapolation for heavy-tailed objectives
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
+                            with Karthyek Murthy
+                        </p>
+                        <p class="text-sm text-academic-800 dark:text-academic-300 mt-2">
+                            <span class="font-serif italic">Control and Decision Conference</span>, 2020
+                        </p>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-academic-400 dark:bg-academic-500 rounded-full border-2 border-white dark:border-academic-900"></div>
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
+                            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3415528" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Limiting distributional fixed points in systemic risk graph models
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
+                            with Sandeep Juneja (Invited Paper)
+                        </p>
+                        <p class="text-sm text-academic-800 dark:text-academic-300 mt-2">
+                            <span class="font-serif italic">Winter Simulation Conference</span>, 2019
+                        </p>
+                    </div>
+
                 </div>
-                
-                <div class="relative">
-                    <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-transparent border-2 border-academic-400 dark:border-academic-500 rounded-full"></div>
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
-                        Asymptotic Analysis of Distributionally Robust Optimization
-                    </h3>
-                    <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
-                        with Harshit Joshi
-                    </p>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-transparent border-2 border-academic-400 dark:border-academic-500 rounded-full"></div>
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
-                        Black Box Importance Sampling for Chance Constrained Optimisation problems
-                    </h3>
-                    <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
-                        with Anirudh Subramanyam, Sai Rakshith, Shanyin Tong and Karthyek Murthy
-                    </p>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-transparent border-2 border-academic-400 dark:border-academic-500 rounded-full"></div>
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
-                        An Extreme Value Theory based Distributionally Robust Scheme for Portfolio Optimization with Tail Risks
-                    </h3>
-                    <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
-                        with Samarth Pardhi
-                    </p>
-                </div>
-                
-                <div class="relative">
-                    <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-transparent border-2 border-academic-400 dark:border-academic-500 rounded-full"></div>
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
-                        Estimation of tail probabilities for spatial extremes
-                    </h3>
-                    <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
-                        with Soudeep Deb, Madhab Barman and Lizan Periera
-                    </p>
-                </div>
-
             </div>
-        </div>
 
-    </div>
-</section>
+            <div class="pub-section" data-category="working">
+                <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
+                    Working Papers
+                </h2>
 
- <!-- ========================================== -->
-<!-- ========================================== -->
-<!-- TEACHING PAGE -->
-<!-- ========================================== -->
-<section id="page-teaching" class="page-section hidden animate-fade-in">
-    <h1 class="text-3xl font-serif font-bold text-academic-900 dark:text-white mb-8 border-b border-academic-200 dark:border-academic-700 pb-4">
-        Teaching
-    </h1>
+                <div class="space-y-6 pl-4 border-l-2 border-academic-200 dark:border-academic-700">
 
-    <div class="space-y-12">
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-transparent border-2 border-academic-400 dark:border-academic-500 rounded-full"></div>
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
+                            Learning Stress Laws Conditioned on Rare Joint Losses
+                        </h3>
+                        <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
+                            with Mantu Gupta (Draft available upon request)
+                        </p>
+                    </div>
 
-        <!-- MBA Courses -->
-        <div>
-            <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
-                MBA
-            </h2>
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-transparent border-2 border-academic-400 dark:border-academic-500 rounded-full"></div>
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
+                            Asymptotic Analysis of Distributionally Robust Optimization
+                        </h3>
+                        <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
+                            with Harshit Joshi
+                        </p>
+                    </div>
 
-            <div class="space-y-5 text-sm text-academic-700 dark:text-academic-300">
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-transparent border-2 border-academic-400 dark:border-academic-500 rounded-full"></div>
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
+                            Black Box Importance Sampling for Chance Constrained Optimisation problems
+                        </h3>
+                        <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
+                            with Anirudh Subramanyam, Sai Rakshith, Shanyin Tong and Karthyek Murthy
+                        </p>
+                    </div>
 
-                <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white">
-                        Advanced Probability and Statistical Models
-                    </h3>
-                    <p class="mt-1 text-academic-600 dark:text-academic-400">
-                        IIM Bangalore, September 2023
-                    </p>
-                    <p class="mt-1 text-sm font-serif italic text-amber-700 dark:text-amber-500">
-                        IIM-B Excellence in Teaching, 2023
-                    </p>
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-transparent border-2 border-academic-400 dark:border-academic-500 rounded-full"></div>
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
+                            An Extreme Value Theory based Distributionally Robust Scheme for Portfolio Optimization with Tail Risks
+                        </h3>
+                        <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
+                            with Samarth Pardhi
+                        </p>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-transparent border-2 border-academic-400 dark:border-academic-500 rounded-full"></div>
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white leading-snug">
+                            Estimation of tail probabilities for spatial extremes
+                        </h3>
+                        <p class="text-sm text-academic-600 dark:text-academic-400 mt-1">
+                            with Soudeep Deb, Madhab Barman and Lizan Periera
+                        </p>
+                    </div>
+
                 </div>
-
-                <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white">
-                        Decision Sciences (I)
-                    </h3>
-                    <p class="mt-1 text-academic-600 dark:text-academic-400">
-                        IIM Bangalore, June 2024, 2025, 2026
-                    </p>
-                </div>
-
-                <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white">
-                        Quantitative Risk Management
-                    </h3>
-                    <p class="mt-1 text-academic-600 dark:text-academic-400">
-                        IIM Bangalore, January 2026, June 2026
-                    </p>
-                </div>
-
             </div>
+
         </div>
+    </section>
 
-        <!-- Ph.D. Courses -->
-        <div>
-            <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
-                Ph.D.
-            </h2>
+    <!-- ========================================== -->
+    <!-- SELECTED TALKS PAGE -->
+    <!-- ========================================== -->
+    <section id="page-talks" class="page-section hidden animate-fade-in">
+        <h1 class="text-3xl font-serif font-bold text-academic-900 dark:text-white mb-8 border-b border-academic-200 dark:border-academic-700 pb-4">
+            Selected Talks
+        </h1>
 
-            <div class="space-y-5 text-sm text-academic-700 dark:text-academic-300">
+        <div class="space-y-12">
 
-                <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white">
-                        Probability Theory
-                    </h3>
-                    <p class="mt-1 text-academic-600 dark:text-academic-400">
-                        IIM Bangalore, June 2023
-                    </p>
-                    <a href="https://sites.google.com/view/probability-theory-term-1/course-home" target="_blank"
-                       class="inline-flex items-center mt-2 text-sm text-academic-blue hover:text-academic-darkblue dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
-                        Course website
-                        <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
-                    </a>
-                </div>
+            <div>
+                <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
+                    Invited Speaker at Meetings
+                </h2>
 
-                <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white">
-                        Probability
-                    </h3>
-                    <p class="mt-1 text-academic-600 dark:text-academic-400">
-                        Indian School of Business, August 2023 &ndash; Present
-                    </p>
-                    <a href="https://sites.google.com/view/probabterm1/home" target="_blank"
-                       class="inline-flex items-center mt-2 text-sm text-academic-blue hover:text-academic-darkblue dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
-                        Course website
-                        <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
-                    </a>
-                </div>
+                <div class="space-y-6 text-sm text-academic-700 dark:text-academic-300">
 
-                <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white">
-                        Probability Theory
-                    </h3>
-                    <p class="mt-1 text-academic-600 dark:text-academic-400">
-                        IIM Bangalore, June 2024, 2025
-                    </p>
-                    <a href="https://sites.google.com/view/probtheory24/course-material" target="_blank"
-                       class="inline-flex items-center mt-2 text-sm text-academic-blue hover:text-academic-darkblue dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
-                        Course material
-                        <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
-                    </a>
-                </div>
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            Simple Closed Form Maximum Likelihood Estimators
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            INFORMS Annual Meeting, 2018
+                        </p>
+                    </div>
 
-                <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white">
-                        Linear Algebra
-                    </h3>
-                    <p class="mt-1 text-academic-600 dark:text-academic-400">
-                        Indian School of Business, August 2025
-                    </p>
-                </div>
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            <a href="https://drive.google.com/file/d/12EDAKl9PJcvrONKN5C9SBVbB2wu35CuS/view?usp=sharing" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Limiting Distributional Fixed Points in Systemic Risk Graph Models
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            APS 2019, MCM 2019
+                        </p>
+                    </div>
 
-            </div>
-        </div>
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            <a href="https://drive.google.com/file/d/1ZCX89N03lR-Fy_v9vzKYhzbkUsbhNNLb/view?usp=sharing" target="_blank" class="hover:text-academic-blue transition-colors">
+                                A Unified Tail Modelling Framework for Stochastic Losses
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            INFORMS Annual Meeting, 2020
+                        </p>
+                    </div>
 
-        <!-- Executive Education -->
-        <div>
-            <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
-                Executive Education
-            </h2>
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            <a href="https://drive.google.com/file/d/1eCz-9JdsJT4XoKxLNFIw4-9UGt4lH_iX/view?usp=sharing" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Efficient Estimation of Tail Risk using Black Box Importance Sampling
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            INFORMS Annual Meeting, 2021
+                        </p>
+                    </div>
 
-            <div class="space-y-5 text-sm text-academic-700 dark:text-academic-300">
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            <a href="https://drive.google.com/file/d/1QwTPTWRTtDrJhDO6Ezs8DTtfytekJsh-/view?usp=sharing" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Combining Retrospective Approximation with Importance Sampling for Black Box CVaR Optimisation
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            ICC-OPT 2022, WSC 2022
+                        </p>
+                    </div>
 
-                <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white">
-                        Advanced Statistical Analysis
-                    </h3>
-                    <p class="mt-1 text-academic-600 dark:text-academic-400">
-                        Indian School of Business, January 2025, 2026
-                    </p>
-                </div>
-
-                <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white">
-                        Sampling and Estimation
-                    </h3>
-                    <p class="mt-1 text-academic-600 dark:text-academic-400">
-                        IIM Bangalore, May 2025
-                    </p>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Invited Lectures -->
-        <div>
-            <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
-                Invited Lectures
-            </h2>
-
-            <div class="space-y-5 text-sm text-academic-700 dark:text-academic-300">
-
-                <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white">
-                        Quantitative Risk Management
-                    </h3>
-                    <p class="mt-1 text-academic-600 dark:text-academic-400">
-                        ACM India Winter School 2025: AI and Finance, IIIT Hyderabad
-                    </p>
-                    <a href="https://drive.google.com/drive/folders/1DnAJ5xguhJEPrvCjUDChJw7dMn2lgfn8?usp=sharing" target="_blank"
-                       class="inline-flex items-center mt-2 text-sm text-academic-blue hover:text-academic-darkblue dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
-                        Course material
-                        <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
-                    </a>
-                </div>
-
-                <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white">
-                        Theory of Extremes: Modelling and Statistics
-                    </h3>
-                    <p class="mt-1 text-academic-600 dark:text-academic-400">
-                        TIFR, March 2022
-                    </p>
-                    <div class="flex flex-wrap gap-x-5 gap-y-2 mt-2">
-                        <a href="https://drive.google.com/file/d/1RP2Wud5XHcxQPvnHfKnL7zWnlmnff9As/view?usp=sharing" target="_blank"
-                           class="inline-flex items-center text-sm text-academic-blue hover:text-academic-darkblue dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
-                            Part 1: Introduction to Extreme Value Theory
-                            <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
-                        </a>
-
-                        <a href="https://drive.google.com/file/d/1zMM2uokQff2p4S8vHDWIdck5kRMx8B8p/view?usp=sharing" target="_blank"
-                           class="inline-flex items-center text-sm text-academic-blue hover:text-academic-darkblue dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
-                            Part 2: Statistics and Multivariate Extremes
-                            <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
-                        </a>
-
-                        <a href="https://www.youtube.com/watch?v=YUBdEm-vnbk" target="_blank"
-                           class="inline-flex items-center text-sm text-academic-blue hover:text-academic-darkblue dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
-                            Lecture video
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            <a href="https://drive.google.com/file/d/1OMPKWuGjEPOu5itnq3UbNLe_2ap8Oj2B/view?usp=sharing" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Overcoming the Sample Complexity Barrier in Risk Analytics with De-biased Machine Learning
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            Analytics for X, 2022
+                        </p>
+                        <a href="https://www.youtube.com/watch?t=2s&v=aWzLQJ4d_C0" target="_blank" class="inline-flex items-center mt-2 text-sm text-academic-blue hover:text-academic-darkblue dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
+                            Video of the talk
                             <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
                         </a>
                     </div>
-                </div>
 
-                <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white">
-                        Stochastic Optimisation
-                    </h3>
-                    <p class="mt-1 text-academic-600 dark:text-academic-400">
-                        IIM Bangalore, December 2024
-                    </p>
-                    <a href="https://drive.google.com/file/d/1nMKG3sktagoFcRLDMRdpM6z9CNnBLjCH/view?usp=drive_link" target="_blank"
-                       class="inline-flex items-center mt-2 text-sm text-academic-blue hover:text-academic-darkblue dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
-                        Slides
-                        <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
-                    </a>
-                </div>
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            <a href="https://drive.google.com/file/d/1ef0dIgZtseqUNuHzBBQvgEMP3Eimu6P8/view?usp=sharing" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Targeted Robustness in Minimising Extreme Risks With Limited Data
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            POMS-HK 2023, APS 2023
+                        </p>
+                    </div>
 
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            <a href="https://drive.google.com/file/d/1oFqusj3LFya1YWu0v9224E9JBB0o5Iad/view?usp=drive_link" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Efficient Importance Scenario Generation for Optimisation with Rare Events
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            SIAM Conference on Optimisation, 2023; LPS 2023; POMS-HK 2024
+                        </p>
+                    </div>
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            <a href="https://drive.google.com/file/d/1qKgqAK1n_ZnqDWJIfJFPJsQG4kwNEl4v/view?usp=drive_link" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Efficient Solution to Chance Constrained Optimisation Problems using Self-Structuring Importance Samplers
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            EMI-PMC 2024, INFORMS International Meeting, 2025
+                        </p>
+                    </div>
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            <a href="https://drive.google.com/file/d/1_Qq4F2Poh-aldCDKtH4DgQADxgB-Ks5m/view?usp=sharing" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Decision Scaling Based Approach for Chance Constrained Problems with Rare Events
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            INFORMS International Meeting, 2025
+                        </p>
+                    </div>
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            Learning Conditional Stress Laws under Rare Joint Losses
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            NUS Quantitative Finance Conference, 2026
+                        </p>
+                    </div>
+
+                </div>
             </div>
-        </div>
 
-    </div>
-</section>
+            <div>
+                <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
+                    Selected Departmental Seminars and Symposia
+                </h2>
 
-   <!-- ========================================== -->
-<!-- STUDENTS PAGE -->
-<!-- ========================================== -->
-<section id="page-students" class="page-section hidden animate-fade-in">
-    <h1 class="text-3xl font-serif font-bold text-academic-900 dark:text-white mb-8 border-b border-academic-200 dark:border-academic-700 pb-4">
-        Student Mentoring
-    </h1>
+                <div class="space-y-6 text-sm text-academic-700 dark:text-academic-300">
 
-    <div class="space-y-12">
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            <a href="https://drive.google.com/file/d/1SfzjoQdjThd7NkRNs61J6n0YQXNs5Thr/view?usp=sharing" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Credit Risk: Approximate Closed Form MLE
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            SUTD Departmental Seminar, 2019
+                        </p>
+                    </div>
 
-        <!-- Ph.D. Students -->
-        <div>
-            <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
-                Ph.D. Students
-            </h2>
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            <a href="https://drive.google.com/file/d/1ClmiorJ1QddaXoLxZykKkqeRXfzwYt01/view?usp=sharing" target="_blank" class="hover:text-academic-blue transition-colors">
+                                A "Rough and Ready Tool" for Rare Event Simulation
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            STCS Symposium, 2020
+                        </p>
+                    </div>
 
-            <div class="space-y-6 text-sm text-academic-700 dark:text-academic-300">
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            <a href="https://drive.google.com/file/d/12xsoItA4SiLJY_uBx1ntPnwXzNeZSP7D/view?usp=sharing" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Achieving Efficiency with Self-Structuring Black Box Importance Samplers
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            STCS Symposium, 2021; IIM Bangalore, 2022
+                        </p>
+                    </div>
 
-                <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white">
-                        Mantu Gupta
-                    </h3>
-                    <p class="mt-1 text-academic-600 dark:text-academic-400">
-                        IIM Bangalore, Sep 2023 &ndash; Present
-                    </p>
-                    <p class="mt-2">
-                        <span class="font-medium text-academic-800 dark:text-academic-200">Projects:</span>
-                        Efficient estimation of CVaR sensitivities using importance sampling; generative models for extreme events.
-                    </p>
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            <a href="https://drive.google.com/file/d/1PCFyBCQqwYhotk4VrxPkpMW8bIb4s-GV/view?usp=sharing" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Simulation of Distribution Tails with Black Box Importance Samplers
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            IIT Bombay, 2021; Plaksha University, 2022
+                        </p>
+                    </div>
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            <a href="https://drive.google.com/file/d/1Nn8v-rUZX8iMSlO4i32GxPGGNza723cc/view?usp=share_link" target="_blank" class="hover:text-academic-blue transition-colors">
+                                How I Learned to Stop Worrying About Extreme Events
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            IIM Bangalore; cancelled
+                        </p>
+                        <a href="https://drive.google.com/file/d/1-oKY90powLQ3PdIG8Gskxy-nYcs8Nbf9/view?usp=share_link" target="_blank" class="inline-flex items-center mt-2 text-sm text-academic-blue hover:text-academic-darkblue dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
+                            R code for this talk
+                            <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                        </a>
+                    </div>
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            <a href="https://drive.google.com/file/d/1wV5_3SinFo7wha4liFubvr-jAudhNfbr/view?usp=sharing" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Making Robust Decisions in the Presence of Rare Events
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            Indian School of Business, 2023; IIM Bangalore, 2023; Tata Institute of Fundamental Research, 2024; Penn State University, 2024
+                        </p>
+                    </div>
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            <a href="https://drive.google.com/file/d/1HjekjQnBJACTcUQdD5hgdC9T42t6eg_i/view?usp=drive_link" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Characterising the Cost of Safe Decision Making Through Asymptotic Analysis of Chance Constrained Programs
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            IIM Ahmedabad, May 2025
+                        </p>
+                    </div>
+
                 </div>
-
-                <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white">
-                        Lizan Periera
-                    </h3>
-                    <p class="mt-1 text-academic-600 dark:text-academic-400">
-                        IIM Bangalore, Jun 2024 &ndash; Present
-                    </p>
-                    <p class="mt-2">
-                        <span class="font-medium text-academic-800 dark:text-academic-200">Projects:</span>
-                        Estimation of Spatial Extremes
-                    </p>
-                </div>
-
-                <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white">
-                        Spandan Roy
-                    </h3>
-                    <p class="mt-1 text-academic-600 dark:text-academic-400">
-                        Sep 2025 &ndash; Present
-                    </p>
-                    <p class="mt-2">
-                        <span class="font-medium text-academic-800 dark:text-academic-200">Projects:</span>
-                       Reverse Stress Testing using Large Deviations Theory
-                    </p>
-                </div>
-
-                <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white">
-                        Ayushi Singh
-                    </h3>
-                    <p class="mt-1 text-academic-600 dark:text-academic-400">
-                        Sep 2025 &ndash; Present
-                    </p>
-                    <p class="mt-2">
-                        <span class="font-medium text-academic-800 dark:text-academic-200">Project:</span>
-                        Importance sampling for minimisation of non-linear tail risk measures.
-                    </p>
-                </div>
-
             </div>
-        </div>
 
-        <!-- Postdoctoral Researchers -->
-        <div>
-            <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
-                Postdoctoral Researchers
-            </h2>
+            <div>
+                <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
+                    Talks to Industry Professionals
+                </h2>
 
-            <div class="space-y-6 text-sm text-academic-700 dark:text-academic-300">
-
-                <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white">
-                        Madhab Barman
-                    </h3>
-                    <p class="mt-1 text-academic-600 dark:text-academic-400">
-                        IIM Bangalore, Jun 2025 &ndash; Present
-                    </p>
-                    <p class="mt-2">
-                        <span class="font-medium text-academic-800 dark:text-academic-200">Project:</span>
-                        Data-driven estimation of rare event probabilities for spatial extremes, with applications to rainfall data.
-                    </p>
+                <div class="space-y-6 text-sm text-academic-700 dark:text-academic-300">
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            <a href="https://drive.google.com/file/d/1ZmZAW7Z4xVvOzGmerUrHy9AYuhdXD7cK/view?usp=sharing" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Looking Beyond the Gaussian for Modelling Credit Risk
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            AI Labs, American Express, Bangalore, April 2023
+                        </p>
+                    </div>
                 </div>
-
             </div>
-        </div>
 
-        <!-- Doctoral Thesis Committees -->
-        <div>
-            <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
-                Doctoral Thesis Committees
-            </h2>
+            <div>
+                <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
+                    Other
+                </h2>
 
-            <div class="space-y-3 text-sm text-academic-700 dark:text-academic-300">
-                <p class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
-                    <span class="font-medium text-academic-900 dark:text-white">Kapil Gupta</span>, IIM Bangalore
-                </p>
-
-                <p class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
-                    <span class="font-medium text-academic-900 dark:text-white">Kunal Rai</span>, IIM Bangalore
-                </p>
+                <div class="space-y-6 text-sm text-academic-700 dark:text-academic-300">
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            <a href="https://www.youtube.com/watch?v=Okg9N8KaHx8" target="_blank" class="hover:text-academic-blue transition-colors">
+                                Thesis Defence Talk
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </h3>
+                    </div>
+                </div>
             </div>
+
         </div>
+    </section>
 
-        <!-- Masters Students and Interns -->
-        <div>
-            <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
-                Masters Students and Interns
-            </h2>
+    <!-- ========================================== -->
+    <!-- TEACHING PAGE -->
+    <!-- ========================================== -->
+    <section id="page-teaching" class="page-section hidden animate-fade-in">
+        <h1 class="text-3xl font-serif font-bold text-academic-900 dark:text-white mb-8 border-b border-academic-200 dark:border-academic-700 pb-4">
+            Teaching
+        </h1>
 
-            <div class="space-y-6 text-sm text-academic-700 dark:text-academic-300">
+        <div class="space-y-12">
 
-                <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white">
-                        Tirtho Sarker
-                    </h3>
-                    <p class="mt-1 text-academic-600 dark:text-academic-400">
-                        Intern, SUTD
-                    </p>
+            <div>
+                <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
+                    MBA
+                </h2>
+
+                <div class="space-y-5 text-sm text-academic-700 dark:text-academic-300">
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            Advanced Probability and Statistical Models
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            IIM Bangalore, September 2023
+                        </p>
+                        <p class="mt-1 text-sm font-serif italic text-amber-700 dark:text-amber-500">
+                            IIM-B Excellence in Teaching, 2023
+                        </p>
+                    </div>
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            Decision Sciences (I)
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            IIM Bangalore, June 2024, 2025, 2026
+                        </p>
+                    </div>
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            Quantitative Risk Management
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            IIM Bangalore, January 2026, June 2026
+                        </p>
+                    </div>
+
                 </div>
-
-                <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white">
-                        Sai Rakshith
-                    </h3>
-                    <p class="mt-1 text-academic-600 dark:text-academic-400">
-                        Master's Project Student
-                    </p>
-                    <p class="mt-2">
-                        <span class="font-medium text-academic-800 dark:text-academic-200">Projects:</span>
-                        Importance sampling for chance constrained optimization; estimation of spatial extremes.
-                    </p>
-                </div>
-
-                <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white">
-                        Samarth Pardhi
-                    </h3>
-                    <p class="mt-1 text-academic-600 dark:text-academic-400">
-                        Intern, IIM Bangalore
-                    </p>
-                    <p class="mt-2">
-                        <span class="font-medium text-academic-800 dark:text-academic-200">Project:</span>
-                        Extreme value theory based distributionally robust optimization for minimising tail risks.
-                    </p>
-                </div>
-
-                <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
-                    <h3 class="text-base font-medium text-academic-900 dark:text-white">
-                        Harshit Joshi
-                    </h3>
-                    <p class="mt-1 text-academic-600 dark:text-academic-400">
-                        Intern, IIM Bangalore
-                    </p>
-                    <p class="mt-2">
-                        <span class="font-medium text-academic-800 dark:text-academic-200">Project:</span>
-                        Asymptotic analysis of distributionally robust problems.
-                    </p>
-                </div>
-
             </div>
-        </div>
 
-    </div>
-</section>
+            <div>
+                <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
+                    Ph.D.
+                </h2>
+
+                <div class="space-y-5 text-sm text-academic-700 dark:text-academic-300">
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            Probability Theory
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            IIM Bangalore, June 2023
+                        </p>
+                        <a href="https://sites.google.com/view/probability-theory-term-1/course-home" target="_blank" class="inline-flex items-center mt-2 text-sm text-academic-blue hover:text-academic-darkblue dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
+                            Course website
+                            <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                        </a>
+                    </div>
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            Probability
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            Indian School of Business, August 2023 &ndash; Present
+                        </p>
+                        <a href="https://sites.google.com/view/probabterm1/home" target="_blank" class="inline-flex items-center mt-2 text-sm text-academic-blue hover:text-academic-darkblue dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
+                            Course website
+                            <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                        </a>
+                    </div>
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            Probability Theory
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            IIM Bangalore, June 2024, 2025
+                        </p>
+                        <a href="https://sites.google.com/view/probtheory24/course-material" target="_blank" class="inline-flex items-center mt-2 text-sm text-academic-blue hover:text-academic-darkblue dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
+                            Course material
+                            <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                        </a>
+                    </div>
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            Linear Algebra
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            Indian School of Business, August 2025
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
+                    Executive Education
+                </h2>
+
+                <div class="space-y-5 text-sm text-academic-700 dark:text-academic-300">
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            Advanced Statistical Analysis
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            Indian School of Business, January 2025, 2026
+                        </p>
+                    </div>
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            Sampling and Estimation
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            IIM Bangalore, May 2025
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
+                    Invited Lectures
+                </h2>
+
+                <div class="space-y-5 text-sm text-academic-700 dark:text-academic-300">
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            Quantitative Risk Management
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            ACM India Winter School 2025: AI and Finance, IIIT Hyderabad
+                        </p>
+                        <a href="https://drive.google.com/drive/folders/1DnAJ5xguhJEPrvCjUDChJw7dMn2lgfn8?usp=sharing" target="_blank" class="inline-flex items-center mt-2 text-sm text-academic-blue hover:text-academic-darkblue dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
+                            Course material
+                            <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                        </a>
+                    </div>
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            Theory of Extremes: Modelling and Statistics
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            TIFR, March 2022
+                        </p>
+                        <div class="flex flex-wrap gap-x-5 gap-y-2 mt-2">
+                            <a href="https://drive.google.com/file/d/1RP2Wud5XHcxQPvnHfKnL7zWnlmnff9As/view?usp=sharing" target="_blank" class="inline-flex items-center text-sm text-academic-blue hover:text-academic-darkblue dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
+                                Part 1: Introduction to Extreme Value Theory
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+
+                            <a href="https://drive.google.com/file/d/1zMM2uokQff2p4S8vHDWIdck5kRMx8B8p/view?usp=sharing" target="_blank" class="inline-flex items-center text-sm text-academic-blue hover:text-academic-darkblue dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
+                                Part 2: Statistics and Multivariate Extremes
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+
+                            <a href="https://www.youtube.com/watch?v=YUBdEm-vnbk" target="_blank" class="inline-flex items-center text-sm text-academic-blue hover:text-academic-darkblue dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
+                                Lecture video
+                                <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            Stochastic Optimisation
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            IIM Bangalore, December 2024
+                        </p>
+                        <a href="https://drive.google.com/file/d/1nMKG3sktagoFcRLDMRdpM6z9CNnBLjCH/view?usp=drive_link" target="_blank" class="inline-flex items-center mt-2 text-sm text-academic-blue hover:text-academic-darkblue dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
+                            Slides
+                            <i class="fas fa-external-link-alt text-xs ml-1.5"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- STUDENTS PAGE -->
+    <!-- ========================================== -->
+    <section id="page-students" class="page-section hidden animate-fade-in">
+        <h1 class="text-3xl font-serif font-bold text-academic-900 dark:text-white mb-8 border-b border-academic-200 dark:border-academic-700 pb-4">
+            Student Mentoring
+        </h1>
+
+        <div class="space-y-12">
+
+            <div>
+                <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
+                    Ph.D. Students
+                </h2>
+
+                <div class="space-y-6 text-sm text-academic-700 dark:text-academic-300">
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            Mantu Gupta
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            IIM Bangalore, Sep 2023 &ndash; Present
+                        </p>
+                        <p class="mt-2">
+                            <span class="font-medium text-academic-800 dark:text-academic-200">Projects:</span>
+                            Efficient estimation of CVaR sensitivities using importance sampling; generative models for extreme events.
+                        </p>
+                    </div>
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            Lizan Periera
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            IIM Bangalore, Jun 2024 &ndash; Present
+                        </p>
+                        <p class="mt-2">
+                            <span class="font-medium text-academic-800 dark:text-academic-200">Projects:</span>
+                            Estimation of Spatial Extremes.
+                        </p>
+                    </div>
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            Spandan Roy
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            Sep 2025 &ndash; Present
+                        </p>
+                        <p class="mt-2">
+                            <span class="font-medium text-academic-800 dark:text-academic-200">Projects:</span>
+                            Reverse Stress Testing using Large Deviations Theory.
+                        </p>
+                    </div>
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            Ayushi Singh
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            Sep 2025 &ndash; Present
+                        </p>
+                        <p class="mt-2">
+                            <span class="font-medium text-academic-800 dark:text-academic-200">Project:</span>
+                            Importance sampling for minimisation of non-linear tail risk measures.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
+                    Postdoctoral Researchers
+                </h2>
+
+                <div class="space-y-6 text-sm text-academic-700 dark:text-academic-300">
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            Madhab Barman
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            IIM Bangalore, Jun 2025 &ndash; Present
+                        </p>
+                        <p class="mt-2">
+                            <span class="font-medium text-academic-800 dark:text-academic-200">Project:</span>
+                            Data-driven estimation of rare event probabilities for spatial extremes, with applications to rainfall data.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
+                    Doctoral Thesis Committees
+                </h2>
+
+                <div class="space-y-3 text-sm text-academic-700 dark:text-academic-300">
+                    <p class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <span class="font-medium text-academic-900 dark:text-white">Kapil Gupta</span>, IIM Bangalore
+                    </p>
+
+                    <p class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <span class="font-medium text-academic-900 dark:text-white">Kunal Rai</span>, IIM Bangalore
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-serif font-semibold text-academic-800 dark:text-academic-200 mb-6">
+                    Masters Students and Interns
+                </h2>
+
+                <div class="space-y-6 text-sm text-academic-700 dark:text-academic-300">
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            Tirtho Sarker
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            Intern, SUTD
+                        </p>
+                    </div>
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            Sai Rakshith
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            Master's Project Student
+                        </p>
+                        <p class="mt-2">
+                            <span class="font-medium text-academic-800 dark:text-academic-200">Projects:</span>
+                            Importance sampling for chance constrained optimization; estimation of spatial extremes.
+                        </p>
+                    </div>
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            Samarth Pardhi
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            Intern, IIM Bangalore
+                        </p>
+                        <p class="mt-2">
+                            <span class="font-medium text-academic-800 dark:text-academic-200">Project:</span>
+                            Extreme value theory based distributionally robust optimization for minimising tail risks.
+                        </p>
+                    </div>
+
+                    <div class="border-l-2 border-academic-300 dark:border-academic-700 pl-5">
+                        <h3 class="text-base font-medium text-academic-900 dark:text-white">
+                            Harshit Joshi
+                        </h3>
+                        <p class="mt-1 text-academic-600 dark:text-academic-400">
+                            Intern, IIM Bangalore
+                        </p>
+                        <p class="mt-2">
+                            <span class="font-medium text-academic-800 dark:text-academic-200">Project:</span>
+                            Asymptotic analysis of distributionally robust problems.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
 </main>
 
 <footer class="mt-auto bg-white dark:bg-academic-950 border-t border-academic-200 dark:border-academic-800 py-8">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center text-sm font-light text-academic-500 dark:text-academic-400">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center text-sm font-light text-academic-500 dark:text-academic-400">
         <p>© 2026 Anand Deo. All rights reserved.</p>
     </div>
 </footer>
 
 <script>
-    // --- Single Page Application (SPA) Navigation Logic ---
     function navigate(pageId) {
-        // Hide all pages
         document.querySelectorAll('.page-section').forEach(el => {
             el.classList.add('hidden');
             el.classList.remove('block');
         });
-        
-        // Show target page
+
         const targetPage = document.getElementById('page-' + pageId);
-        if(targetPage) {
+
+        if (targetPage) {
             targetPage.classList.remove('hidden');
             targetPage.classList.add('block');
         }
 
-        // Update nav active states
         document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(el => {
             el.classList.remove('active-nav-link');
-            if(el.dataset.target === pageId) {
+
+            if (el.dataset.target === pageId) {
                 el.classList.add('active-nav-link');
             }
         });
 
-        // Close mobile menu if open
-        document.getElementById('mobileMenu').classList.add('hidden');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileMenu) {
+            mobileMenu.classList.add('hidden');
+        }
 
-        // Scroll to top
+        if (window.location.hash !== '#' + pageId) {
+            history.replaceState(null, '', '#' + pageId);
+        }
+
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // --- Publications Filtering Logic ---
     function filterPubs(category) {
         const sections = document.querySelectorAll('.pub-section');
         const btns = document.querySelectorAll('.pub-btn');
 
-        // Update button states
         btns.forEach(btn => {
             if (btn.dataset.filter === category) {
                 btn.classList.add('bg-academic-200', 'dark:bg-academic-700', 'text-academic-900', 'dark:text-white', 'border-academic-400');
@@ -1021,7 +1306,6 @@
             }
         });
 
-        // Filter content
         sections.forEach(sec => {
             if (category === 'all' || sec.dataset.category === category) {
                 sec.style.display = 'block';
@@ -1031,11 +1315,10 @@
         });
     }
 
-    // --- Dark/Light Mode Management ---
     function setupThemeToggle(btnId, iconId) {
         const toggleBtn = document.getElementById(btnId);
         const icon = document.getElementById(iconId);
-        
+
         if (!toggleBtn || !icon) return;
 
         toggleBtn.addEventListener('click', () => {
@@ -1053,10 +1336,12 @@
 
     function updateIcons(theme) {
         const icons = ['themeIcon', 'themeIconMobile'];
+
         icons.forEach(id => {
             const el = document.getElementById(id);
-            if(el) {
-                if(theme === 'dark') {
+
+            if (el) {
+                if (theme === 'dark') {
                     el.className = 'fas fa-sun text-academic-300';
                 } else {
                     el.className = 'fas fa-moon text-academic-500';
@@ -1065,8 +1350,9 @@
         });
     }
 
-    // Initialize Theme
-    const isDarkMode = localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    const isDarkMode = localStorage.getItem('theme') === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
     if (isDarkMode) {
         document.documentElement.classList.add('dark');
         updateIcons('dark');
@@ -1078,25 +1364,26 @@
     setupThemeToggle('themeToggle', 'themeIcon');
     setupThemeToggle('themeToggleMobile', 'themeIconMobile');
 
-    // --- Mobile Menu Toggle ---
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-    
-    mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
 
-    // Initialize initial active filter state
-    document.querySelector('.pub-btn[data-filter="all"]').classList.add('bg-academic-200', 'dark:bg-academic-700', 'text-academic-900', 'dark:text-white', 'border-academic-400');
-    
-    // Check hash on load to navigate correctly if linked directly (optional enhancement)
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+
     window.addEventListener('load', () => {
+        filterPubs('all');
+
         const hash = window.location.hash.replace('#', '');
-        if(['about', 'research', 'teaching', 'students'].includes(hash)) {
+        if (['about', 'research', 'talks', 'teaching', 'students'].includes(hash)) {
             navigate(hash);
+        } else {
+            navigate('about');
         }
     });
-
 </script>
+
 </body>
 </html>
